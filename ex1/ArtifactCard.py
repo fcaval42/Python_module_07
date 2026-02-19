@@ -6,12 +6,15 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/19 10:35:33 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:06:05 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/19 15:39:54 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-class ArtifactCard():
-    
+from ex0.Card import Card
+
+
+class ArtifactCard(Card):
+
     def __init__(self, name: str, cost: int, rarity: str, durability:
                  int, effect: str):
         self.name = name
@@ -28,5 +31,8 @@ class ArtifactCard():
         return play_info
 
     def activate_ability(self) -> dict:
-        # usefulness?
-        return {f"{self.name}: self"}
+        return {
+            "artifact": self.name,
+            "effect_activated": self.effect,
+            "durability_remaining": self.durability
+        }

@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/19 10:35:29 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:16:56 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/19 15:40:28 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -16,10 +16,11 @@ from ex1.SpellCard import SpellCard
 from ex1.ArtifactCard import ArtifactCard
 from random import shuffle
 
+
 class Deck:
     def __init__(self):
         self.cards = []
-        
+
     def add_card(self, card: Card) -> None:
         self.cards.append(card)
 
@@ -59,7 +60,7 @@ class Deck:
             total_cost += card.cost
 
         if deck_stats["total_cards"] > 0:
-            deck_stats["avg_cost"] = round(total_cost / 
+            deck_stats["avg_cost"] = round(total_cost /
                                            deck_stats["total_cards"])
 
         return deck_stats

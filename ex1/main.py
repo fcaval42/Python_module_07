@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/19 10:35:45 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:19:52 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/19 15:41:01 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -31,7 +31,7 @@ def main():
     try:
         creature = CreatureCard("Nymphali_ex", 3, "Shiny", 70, 140)
         spell = SpellCard("Vent féérique", 2, "Common", "Psy and normal")
-        artifact = ArtifactCard("Ruban du bonheur", 2, "Rare", 1, 
+        artifact = ArtifactCard("Ruban du bonheur", 2, "Rare", 1,
                                 "you may draw 2 cards")
     except ValueError as e:
         print(f"Error: {e}")
@@ -54,7 +54,7 @@ def main():
     try:
         while deck.cards:
             draw = deck.draw_card()
-            
+
             if isinstance(draw, SpellCard):
                 card_type = "Spell"
             elif isinstance(draw, ArtifactCard):
@@ -69,7 +69,7 @@ def main():
     except ValueError as e:
         print(f"Error: {e}")
         return
-    
+
     print("Polymorphism in action: Same interface, different card behaviors!")
 
 

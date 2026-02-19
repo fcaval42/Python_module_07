@@ -6,15 +6,16 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/18 15:44:34 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/18 17:49:30 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/19 10:27:59 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from ex0.Card import Card
 
+
 class CreatureCard(Card):
-    
-    def __init__(self, name: str, cost: int, rarity: str, attack: int, 
+
+    def __init__(self, name: str, cost: int, rarity: str, attack: int,
                  health: int) -> None:
         super().__init__(name, cost, rarity)
         self.attack = attack
@@ -29,7 +30,15 @@ class CreatureCard(Card):
         return info_play
 
     def attack_target(self, target) -> dict:
-        pass
+        attack_info = {}
+        attack_info["attacker"] = self.name
+        attack_info["target"] = target.name
+        attack_info["damage_dealt"] = self.attack
+        if self.attack >= target.health:
+            attack_info["combat_resolved"] = True
+        else:
+            attack_info["combat_resolved"] = False
+        return attack_info
 
     def get_card_info(self) -> dict:
         info = super().get_card_info()

@@ -6,18 +6,19 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/18 15:44:24 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/18 17:28:41 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/19 10:28:01 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from abc import ABC, abstractmethod
 
-class Card:
+
+class Card(ABC):
     def __init__(self, name: str, cost: int, rarity: str) -> None:
         self.name = name
         self.cost = cost
         self.rarity = rarity
-        
+
     @abstractmethod
     def play(self, game_state: dict) -> dict:
         pass

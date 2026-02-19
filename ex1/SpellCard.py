@@ -6,11 +6,14 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/19 10:35:11 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:10:49 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/19 15:41:24 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
-class SpellCard():
+from ex0.Card import Card
+
+
+class SpellCard(Card):
 
     def __init__(self, name: str, cost: int, rarity: str, effect_type: str):
         self.name = name
@@ -26,7 +29,8 @@ class SpellCard():
         return play_info
 
     def resolve_effect(self, targets: list) -> dict:
-        resolve = {}
-        resolve["target"] = targets
-        resolve["potion"] += 20
-        return resolve
+        return {
+            "effect_type": self.effect_type,
+            "targets_affected": len(targets),
+            "resolved": True
+        }

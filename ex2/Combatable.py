@@ -1,11 +1,28 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  __init__.py                                       :+:      :+:    :+:    #
+#  Combatable.py                                     :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 2026/02/19 10:34:56 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:41:17 by fcaval          ###   ########.fr        #
+#  Created: 2026/02/19 16:45:39 by fcaval          #+#    #+#               #
+#  Updated: 2026/02/19 17:00:33 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
+
+from abc import ABC, abstractmethod
+
+
+class Combatable(ABC):
+
+    @abstractmethod
+    def attack(self, target) -> dict:
+        pass
+
+    @abstractmethod
+    def defend(self, incoming_damage: int) -> dict:
+        pass
+
+    @abstractmethod
+    def get_combat_stats(self) -> dict:
+        pass
