@@ -6,13 +6,15 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/19 16:51:05 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 17:20:51 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/20 14:33:25 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
+from ex2.EliteCard import EliteCard
+
 
 def main():
-    
+
     print("\n=== DataDeck Ability System ===\n")
 
 # ************************************************************************* #
@@ -23,12 +25,34 @@ def main():
     print("- Card: ['play', 'get_card_info', 'is_playable']")
     print("- Combatable: ['attack', 'defend', 'get_combat_stats']")
     print("- Magical: ['cast_spell', 'channel_mana', 'get_magic_stats']")
+    print()
 
 # ************************************************************************* #
-#                         Playing EliteCard                                 #
+#                             Combat phase                                  #
 # ************************************************************************* #
 
-    print(f"")
+    lugia = EliteCard("Lugia_ex", 6, "Special", 180, 150)
+    ho_oh = EliteCard("Ho-oh_ex", 2, "Immersive", 80, 150)
+    airmure = EliteCard("Airmure_ex", 2, "Full-art", 70, 140)
+
+    print(f"Playing {lugia.name} (Elite Card):\n")
+    print("Combat phase:")
+    print(f"Attack result: {lugia.attack('Enemy')}")
+    print(f"Defense result: {lugia.defend(ho_oh.attack_power)}")
+    print()
+
+# ************************************************************************* #
+#                              Magic phase                                  #
+# ************************************************************************* #
+
+    print("Magic phase:")
+    tmp = lugia.cast_spell('Explosion Élémentaire', [ho_oh.name, airmure.name])
+    print(f"Spell cast: {tmp}")
+    print(f"Mana channel: {lugia.channel_mana(9)}")
+    print()
+
+    print("Multiple interface implementation successful!")
+
 
 if __name__ == "__main__":
     main()
