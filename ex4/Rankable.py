@@ -1,37 +1,32 @@
 # ************************************************************************* #
 #                                                                           #
 #                                                      :::      ::::::::    #
-#  CardFactory.py                                    :+:      :+:    :+:    #
+#  Rankable.py                                       :+:      :+:    :+:    #
 #                                                  +:+ +:+         +:+      #
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
-#  Created: 2026/02/20 14:43:42 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/24 10:21:15 by fcaval          ###   ########.fr        #
+#  Created: 2026/02/24 11:53:47 by fcaval          #+#    #+#               #
+#  Updated: 2026/02/24 11:56:47 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
 from abc import ABC, abstractmethod
-from ex0.Card import Card
 
 
-class CardFactory(ABC):
-
+class Rankable(ABC):
+    
     @abstractmethod
-    def create_creature(self, name_or_power: str | int | None = None) -> Card:
+    def calculate_rating(self) -> int:
         pass
 
     @abstractmethod
-    def create_spell(self, name_or_power: str | int | None = None) -> Card:
+    def update_wins(self, wins: int) -> None:
         pass
 
     @abstractmethod
-    def create_artifact(self, name_or_power: str | int | None = None) -> Card:
+    def update_losses(self, losses: int) -> None:
         pass
 
     @abstractmethod
-    def create_themed_deck(self, size: int) -> dict:
-        pass
-
-    @abstractmethod
-    def get_supported_types(self) -> dict:
+    def get_rank_info(self) -> dict:
         pass
