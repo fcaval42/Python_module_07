@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/24 11:53:47 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/24 11:56:47 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/25 13:53:32 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -14,7 +14,7 @@ from abc import ABC, abstractmethod
 
 
 class Rankable(ABC):
-    
+
     @abstractmethod
     def calculate_rating(self) -> int:
         pass

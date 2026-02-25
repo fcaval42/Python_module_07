@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/19 10:35:45 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:41:01 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/25 14:12:25 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -51,6 +51,7 @@ def main():
     energy = 8
     print("Drawing and playing cards:")
     print()
+    deck.shuffle()
     try:
         while deck.cards:
             draw = deck.draw_card()

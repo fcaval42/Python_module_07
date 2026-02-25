@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/18 15:44:41 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 10:29:26 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/25 14:01:51 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -43,7 +43,7 @@ def main():
 
     energy = 6
     game_state = {}
-    print(f"Playing {pikachu_ex.name} with {energy} energy available ")
+    print(f"Playing {pikachu_ex.name} with {energy} energy available:")
     result_playable = pikachu_ex.is_playable(energy)
     print(f"Playable: {result_playable}")
     if result_playable is False:
@@ -56,7 +56,7 @@ def main():
 #                                  Attack                                   #
 # ************************************************************************* #
 
-    print(f"{pikachu_ex.name} attack {celebi_ex.name}:")
+    print(f"{pikachu_ex.name} attacks {celebi_ex.name}:")
     attack_info = pikachu_ex.attack_target(celebi_ex)
     print(f"Attack result: {attack_info}")
     print()

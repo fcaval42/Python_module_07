@@ -6,9 +6,6 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/18 15:40:56 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 15:42:01 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/25 13:53:17 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
-
-from ex0.Card import Card
-from ex1.SpellCard import SpellCard

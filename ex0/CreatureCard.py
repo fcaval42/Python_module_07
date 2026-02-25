@@ -6,7 +6,7 @@
 #  By: fcaval <fcaval@student.42.fr>             +#+  +:+       +#+         #
 #                                              +#+#+#+#+#+   +#+            #
 #  Created: 2026/02/18 15:44:34 by fcaval          #+#    #+#               #
-#  Updated: 2026/02/19 10:27:59 by fcaval          ###   ########.fr        #
+#  Updated: 2026/02/25 14:01:44 by fcaval          ###   ########.fr        #
 #                                                                           #
 # ************************************************************************* #
 
@@ -35,9 +35,9 @@ class CreatureCard(Card):
         attack_info["target"] = target.name
         attack_info["damage_dealt"] = self.attack
         if self.attack >= target.health:
-            attack_info["combat_resolved"] = True
-        else:
             attack_info["combat_resolved"] = False
+        else:
+            attack_info["combat_resolved"] = True
         return attack_info
 
     def get_card_info(self) -> dict:
